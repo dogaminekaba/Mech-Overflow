@@ -13,6 +13,42 @@
 
 <body>
 	<script src="sketch.js"></script>
+	<div class="game-menu" id="gameMenu">
+		<div class="score-text-container">
+			<p class="score-text" id="scoreTxt" > Credits: 0 </p>
+		</div>
+		<div class="sticky-note">
+			<h2> Robot Jobs </h2>
+			<div class="sticky-note-container">
+				<img src="assets/robot-1-icon.png" alt="icon-robot-1">
+				<p>Gardener (Id: 1)</p>
+			</div>
+			<div class="sticky-note-container">
+				<img src="assets/robot-2-icon.png" alt="icon-robot-2">
+				<p>Mechanic (Id: 2)</p>
+			</div>
+			<div class="sticky-note-container">
+				<img src="assets/robot-3-icon.png" alt="icon-robot-3">
+				<p>Therapist (Id: 3)</p>
+			</div>
+			<div class="sticky-note-container">
+				<img src="assets/robot-4-icon.png" alt="icon-robot-4">
+				<p>Bouncer (Id: 4)</p>
+			</div>
+		</div>
+	</div>
+	<div class="overlay" id="startMenu">
+		<p class="info-text">
+			You're assigned to fix malfunctioning robots. <br/>
+			You need to show the objects they don't know to the camera. <br/>
+			Then you will have to say the correct ID number to microphone to assign their job. <br/>
+			Good luck!
+		</p>
+		<div class="button-container">
+			<button class="btn" id="startGameBtn">START YOUR SHIFT</button>
+		</div>
+	</div>
+	
 </body>
 
 </html>

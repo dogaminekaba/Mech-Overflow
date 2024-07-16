@@ -1,11 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
 html,
 body {
 	margin: 0;
 	padding: 0;
+	background-color: black;
 }
 
 canvas {
-	display: block;
-	margin: auto;
-	margin-top: 50px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1600px;
+	height: 800px;
+	transform: translate(-50%, -50%);
+}
+
+.button-container {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.btn{
+	font-family: Teko;
+	font-weight: 0;
+	font-size: 30px;
+	color: #fff;
+	background: linear-gradient(90deg, #2a9d8f 0%, #e76f51 100%);
+	padding: 10px 30px;
+	border: solid #ffffff 4px;
+	box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+	border-radius: 50px;
+	transition : 462ms;
+	transform: translateY(0);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+}
+
+.btn:hover{
+	transition : 462ms;
+	padding: 10px 50px;
+	transform : translateY(-0px);
+	background: linear-gradient(90deg, #2a9d8f 0%, #e76f51 100%);
+	color: #ffffff;
+	border: solid 4px #ffffff;
+}
+
+.overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1600px;
+	height: 800px;
+	transform: translate(-50%, -50%);
+	background: rgba(0, 0, 0, 0.5);
+	backdrop-filter: blur(50px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+}
+
+.game-menu {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1600px;
+	height: 800px;
+	transform: translate(-50%, -50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 10;
+}
+
+.score-text-container{
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.score-text{
+	font-family: Teko;
+	font-weight: 0;
+	font-size: 30px;
+	color: #ffffff;
+	white-space: pre-line;
+	line-height: 90%;
+	text-align: center;
+}
+
+.info-text{
+	top: 10%;
+	font-family: Teko;
+	font-weight: 0;
+	font-size: 30px;
+	color: #ffffff;
+	white-space: pre-line;
+	line-height: 90%;
+	text-align: center;
+}
+
+.sticky-note {
+	position: absolute;
+	width: 250px;
+	padding: 20px;
+	top: 5%;
+	right: 5%;
+	background-color: #fff383;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	transform: rotate(-2deg);
+	font-family: Teko;
+	color: #333;
+}
+
+.sticky-note-container {
+	display: grid;
+	align-items: center; 
+	grid-template-columns: 1fr 1fr 1fr;
+	column-gap: 5px;
+}
+  
+.sticky-note h2 {
+	margin: 0 0 10px;
+	font-size: 30px;
+}
+  
+.sticky-note p {
+	margin: 0;
+	font-size: 24px;
 }

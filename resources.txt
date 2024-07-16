@@ -1,0 +1,8 @@
+Assets:
+https://lanferna.itch.io/tin-stumpers
+
+
+Code Examples:
+https://editor.p5js.org/codingtrain/sketches/VIYRpcME3
+https://editor.p5js.org/jonfroehlich/sketches/ATtvaq89P
+
