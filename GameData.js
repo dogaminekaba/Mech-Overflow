@@ -30,7 +30,7 @@ class TraineeRobot {
 		let objIndex = getRandomInt(officeObjects.length);
 		this.officeObject = officeObjects[objIndex];
 
-		let maxRobots = 3;
+		let maxRobots = 4;
 
 		// assign robot type
 		this.robotType = getRandomInt(maxRobots);
@@ -42,7 +42,7 @@ class TraineeRobot {
 		this.officeObjectLearned = 0;
 		this.jobLearned = 0;
 	}
-	
+
 }
 
 

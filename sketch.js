@@ -298,9 +298,6 @@ function onNewSoundClassified(error, results){
 	else {
 		voiceInput = "-";
 	}
-
-	// console.log(results);
-	// redraw();
 }
 
 function drawTimer(){
@@ -341,7 +338,7 @@ function drawTraineeInfo()
 		text("Show Object: " + sampleRobot.officeObject, width * 0.15, height * 0.6 - (definedTextSize + 4));
 	} else if (trainingState === "Job"){
 		setColor(sampleRobot.jobLearned);
-		text("Assign Job Id: " + voiceInput, width * 0.15, height * 0.6 - (definedTextSize + 4));
+		text("Assign Job Id.", width * 0.15, height * 0.6 - (definedTextSize + 4));
 	}
 
 	drawSoundFeed();
