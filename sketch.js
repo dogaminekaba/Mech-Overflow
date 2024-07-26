@@ -1,13 +1,3 @@
-// ml5.js: Object Detection with COCO-SSD (Webcam)
-// The Coding Train / Daniel Shiffman
-// https://thecodingtrain.com/learning/ml5/1.3-object-detection.html
-// https://youtu.be/QEzRxnuaZCk
-
-// p5.js Web Editor - Image: https://editor.p5js.org/codingtrain/sketches/ZNQQx2n5o
-// p5.js Web Editor - Webcam: https://editor.p5js.org/codingtrain/sketches/VIYRpcME3
-// p5.js Web Editor - Webcam Persistence: https://editor.p5js.org/codingtrain/sketches/Vt9xeTxWJ
-
-
 // UI
 let startGameBtn;
 let startMenu;
@@ -63,7 +53,7 @@ function preload() {
 // configurations
 function setup() {
 	createCanvas(gameSceneW, gameSceneH);
-	textFont("Teko");
+	textFont('Teko');
 	textSize(definedTextSize);
 
 	video = createCapture(VIDEO);
@@ -71,12 +61,12 @@ function setup() {
 	video.hide();
 
 	soundClassifier.classify(onNewSoundClassified);
-	voiceInput = "-";
+	voiceInput = '-';
 
 	// TODO - generate game objects
 
 	startGameBtn = document.getElementById('startGameBtn');
-	startGameBtn.addEventListener("click", startGame);
+	startGameBtn.addEventListener('click', startGame);
 	startMenu = document.getElementById('startMenu');
 
 	song.setVolume(0.1);
@@ -338,7 +328,7 @@ function drawTraineeInfo()
 		text("Show Object: " + sampleRobot.officeObject, width * 0.15, height * 0.6 - (definedTextSize + 4));
 	} else if (trainingState === "Job"){
 		setColor(sampleRobot.jobLearned);
-		text("Assign Job Id.", width * 0.15, height * 0.6 - (definedTextSize + 4));
+		text("Say Job Id.", width * 0.15, height * 0.6 - (definedTextSize + 4));
 	}
 
 	drawSoundFeed();

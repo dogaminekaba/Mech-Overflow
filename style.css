@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&family=Teko:wght@300..700&display=swap');
 
 html,
 body {
@@ -24,7 +24,7 @@ canvas {
 }
 
 .btn{
-	font-family: Teko;
+	font-family: "Teko", sans-serif;
 	font-weight: 0;
 	font-size: 30px;
 	color: #fff;
@@ -86,7 +86,7 @@ canvas {
 }
 
 .score-text{
-	font-family: Teko;
+	font-family: "Teko", sans-serif;
 	font-weight: 0;
 	font-size: 30px;
 	color: #ffffff;
@@ -97,7 +97,7 @@ canvas {
 
 .info-text{
 	top: 10%;
-	font-family: Teko;
+	font-family: "Teko", sans-serif;
 	font-weight: 0;
 	font-size: 30px;
 	color: #ffffff;
@@ -106,17 +106,27 @@ canvas {
 	text-align: center;
 }
 
+.title-text{
+	bottom: 60%;
+	position: absolute;
+	font-family: "Libre Barcode 39 Text", system-ui;
+	font-weight: 0;
+	font-size: 150px;
+	color: #ffffff;
+	text-align: center;
+}
+
 .sticky-note {
 	position: absolute;
+	font-family: "Teko", sans-serif;
 	width: 250px;
 	padding: 20px;
 	top: 5%;
 	right: 5%;
 	background-color: #fff383;
+	color: #333;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 	transform: rotate(-2deg);
-	font-family: Teko;
-	color: #333;
 }
 
 .sticky-note-container {
