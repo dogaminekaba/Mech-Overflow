@@ -19,7 +19,7 @@ let targetX, targetY;
 let speed = 5;
 let isAnimating = false;
 let song;
-let trainingState; // "Objects","Job","Start"
+let trainingState; // 'Objects','Job','Start'
 let scoreCredits;
 let voiceInput;
 
@@ -62,8 +62,6 @@ function setup() {
 
 	soundClassifier.classify(onNewSoundClassified);
 	voiceInput = '-';
-
-	// TODO - generate game objects
 
 	startGameBtn = document.getElementById('startGameBtn');
 	startGameBtn.addEventListener('click', startGame);
@@ -114,21 +112,21 @@ async function startTraining()
 {
 	let setupLearning = true;
 
-	trainingState = "Start";
+	trainingState = 'Start';
 
 	await sleep(200);
 	while(gameRunning) {
-		if(trainingState === "Start"){
+		if(trainingState === 'Start'){
 
 			sampleRobot = new TraineeRobot();
-			trainingState = "Objects";
+			trainingState = 'Objects';
 			setupLearning = true;
-			voiceInput = "-";
+			voiceInput = '-';
 
-		} else if(trainingState === "Objects"){
+		} else if(trainingState === 'Objects'){
 
 			if(setupLearning){
-				speak("Show me " + sampleRobot.officeObject);
+				speak('Show me ' + sampleRobot.officeObject);
 				setupLearning = false;
 				timerValue = 10;
 			}
@@ -139,15 +137,15 @@ async function startTraining()
 			} else {
 				scoreCredits += sampleRobot.officeObjectLearned; // +1 or -1
 				await sleep(2000);
-				trainingState = "Job";
+				trainingState = 'Job';
 				setupLearning = true;
 			}
 
-		} else if (trainingState === "Job"){
+		} else if (trainingState === 'Job'){
 
 			if(setupLearning){
-				speak("What is my job ID?");
-				voiceInput = "-";
+				speak('What is my job ID?');
+				voiceInput = '-';
 				setupLearning = false;
 				timerValue = 10;
 			}
@@ -163,7 +161,7 @@ async function startTraining()
 			} else {
 				scoreCredits += sampleRobot.jobLearned; // +1 or -1
 				await sleep(2000);
-				trainingState = "Start";
+				trainingState = 'Start';
 			}
 			
 		}
@@ -177,7 +175,7 @@ function draw() {
 	drawTimer();
 	drawTraineeInfo(sampleRobot);
 
-	scoreTxt.textContent = 	"Credits: " + scoreCredits;
+	scoreTxt.textContent = 	'Credits: ' + scoreCredits;
 }
 
 function drawGameScene() {
@@ -199,45 +197,17 @@ function drawVideoFeed() {
 
 	for (let i = 0; i < objectDetections.length; i++) {
 		let object = objectDetections[i];
-		if (object.label == "person") {
+		if (object.label == 'person') {
 			continue;
 		}
 
-		if( trainingState === "Objects" && object.label == sampleRobot.officeObject)
+		if( trainingState === 'Objects' && object.label == sampleRobot.officeObject)
 		{
 			// SUCCESS
 			sampleRobot.officeObjectLearned = 1;
 		}
 
-		// let objWidth = Math.ceil(object.width);
-		// let objHeight = Math.ceil(object.height);
-
-		// let img = createImage(objWidth, objHeight);
-		// img.copy(video, object.x, object.y, objWidth, objHeight, 0, 0, img.width, img.height);
-
-		// image(img, 0, 0);
-
-		// img.loadPixels();
-
-		// let pixels = img.pixels;
-		// let imgR = 0;
-		// let imgG = 0;
-		// let imgB = 0;
-		// let imgA = 0;
-
-		// for (let j = 0; j < pixels.length; j += 4) {
-		// 	imgR += pixels[j];
-		// 	imgG += pixels[j + 1];
-		// 	imgB += pixels[j + 2];
-		// 	imgA += pixels[j + 3];
-		// }
-
-		// imgR = imgR / (pixels.length / 4);
-		// imgG = imgG / (pixels.length / 4);
-		// imgB = imgB / (pixels.length / 4);
-
 		// draw rect over object
-		// stroke(imgR, imgG, imgB);
 		stroke('black');
 		strokeWeight(4);
 		noFill();
@@ -245,7 +215,6 @@ function drawVideoFeed() {
 
 		// write name of the object
 		noStroke();
-		// fill(imgR, imgG, imgB);
 		fill('black');
 		text(object.label, object.x + 10, object.y + definedTextSize);
 
@@ -286,7 +255,7 @@ function onNewSoundClassified(error, results){
 		voiceInput = results[0].label;
 	}
 	else {
-		voiceInput = "-";
+		voiceInput = '-';
 	}
 }
 
@@ -304,10 +273,10 @@ function drawTimer(){
 	}
 	if (timerValue == 0) {
 		fill('red');
-		if(trainingState === "Objects"){
+		if(trainingState === 'Objects'){
 			text('FAILED!', width * 0.15, height * 0.6 + (definedTextSize + 4));
 			sampleRobot.officeObjectLearned = -1;
-		} else if (trainingState === "Job"){
+		} else if (trainingState === 'Job'){
 			text('FAILED! ID was: ' + sampleRobot.jobId, width * 0.15, height * 0.6 + (definedTextSize + 4));
 			sampleRobot.jobLearned = -1;
 		}
@@ -323,12 +292,12 @@ function drawTraineeInfo()
 	// Draw Trainee Info
 	noStroke();
 	
-	if(trainingState === "Objects"){
+	if(trainingState === 'Objects'){
 		setColor(sampleRobot.officeObjectLearned);
-		text("Show Object: " + sampleRobot.officeObject, width * 0.15, height * 0.6 - (definedTextSize + 4));
-	} else if (trainingState === "Job"){
+		text('Show Object: ' + sampleRobot.officeObject, width * 0.15, height * 0.6 - (definedTextSize + 4));
+	} else if (trainingState === 'Job'){
 		setColor(sampleRobot.jobLearned);
-		text("Say Job Id.", width * 0.15, height * 0.6 - (definedTextSize + 4));
+		text('Say Job Id.', width * 0.15, height * 0.6 - (definedTextSize + 4));
 	}
 
 	drawSoundFeed();
@@ -350,7 +319,7 @@ function drawSoundFeed() {
 	fill('white');
 	noStroke();
 
-	text("You said: " + voiceInput, width * 0.15, height * 0.6 + 2 * (definedTextSize + 4));
+	text('You said: ' + voiceInput, width * 0.15, height * 0.6 + 2 * (definedTextSize + 4));
 }
 
 function speak(words) {
@@ -365,7 +334,6 @@ function speak(words) {
 	speechSynthesis.speak(utterance);
 }
 
-// a custom 'sleep' or wait' function, that returns a Promise that resolves only after a timeout
 function sleep(millisecondsDuration)
 {
   return new Promise((resolve) => {

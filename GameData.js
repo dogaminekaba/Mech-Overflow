@@ -1,26 +1,33 @@
 const officeObjects = [];
 officeObjects.push(
-	"cup", 
-	"book", 
-	"cell phone",
-	"backpack",
-	"scissors",
-	"car",
-	"bottle"
+	'cup', 
+	'book', 
+	'cell phone',
+	'backpack',
+	'scissors',
+	'car',
+	'bottle',
+	'fork',
+	'apple',
+	'chair',
+	'potted plant',
+	'keyboard',
+	'vase',
+	'teddy bear'
 );
 
 const jobIds = [];
 jobIds.push(
-	"zero", 
-	"one", 
-	"two",
-	"three",
-	"four",
-	"five",
-	"six",
-	"seven",
-	"eight",
-	"nine"
+	'zero', 
+	'one', 
+	'two',
+	'three',
+	'four',
+	'five',
+	'six',
+	'seven',
+	'eight',
+	'nine'
 );
 
 class TraineeRobot {
